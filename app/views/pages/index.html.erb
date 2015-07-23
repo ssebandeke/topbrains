@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%=link_to "Home", root_path%></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class=""><%=link_to "Admin", rails_admin_path%></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<%@pag.each do |frm|%>
+  <div style="border-color:#aabbcc; width:200;" >
+  <p><%=frm.name%></p>
+ <p> <%=frm.title%></p>
+  <p><%=frm.dscription%></p>
+<p><%=time_ago_in_words(frm.created_at,include_seconds: true)%> ago</p>
+
+  <%end%>
+  </div>
